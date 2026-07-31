@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff4b91,#ff9a9e);
+    color:white;
+    text-align:center;
+    min-height:100vh;
+}
+
+/* Loading Heart Animation */
+
+.loader{
+    position:fixed;
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#ff4b91;
+    z-index:10;
+}
+
+.heart{
+    width:100px;
+    height:100px;
+    background:red;
+    position:relative;
+    transform:rotate(-45deg);
+    animation:beat 1s infinite;
+}
+
+.heart:before,
+.heart:after{
+    content:"";
+    width:100px;
+    height:100px;
+    background:red;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart:before{
+    top:-50px;
+    left:0;
+}
+
+.heart:after{
+    left:50px;
+    top:0;
+}
+
+@keyframes beat{
+    0%{transform:rotate(-45deg) scale(1);}
+    50%{transform:rotate(-45deg) scale(1.2);}
+    100%{transform:rotate(-45deg) scale(1);}
+}
+
+
+.hidden{
+    display:none;
+}
+
+
+/* Main Website */
+
+.main{
+    padding:20px;
+}
+
+header h1{
+    font-size:35px;
+    margin-top:20px;
+}
+
+header p{
+    font-size:18px;
+    margin:10px;
+}
+
+
+/* Photos */
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px;
+}
+
+.gallery img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid white;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+
+/* Message Box */
+
+.message{
+    background:rgba(255,255,255,0.2);
+    padding:25px;
+    border-radius:25px;
+    max-width:600px;
+    margin:auto;
+}
+
+.message h2{
+    margin-bottom:15px;
+}
+
+.message p{
+    line-height:1.6;
+}
+
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4b91;
+    font-size:18px;
+    cursor:pointer;
+}
+
+
+footer{
+    margin-top:30px;
+    padding:20px;
+}
