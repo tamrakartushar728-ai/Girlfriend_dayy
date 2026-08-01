@@ -1,29 +1,61 @@
-window.onload = function(){
+window.onload = function () {
 
-    setTimeout(function(){
+    setTimeout(function () {
 
-        document.querySelector(".loader").style.display="none";
+        document.querySelector(".loader").style.display = "none";
 
         document.querySelector(".main").classList.remove("hidden");
 
-    },3000);
+    }, 3000);
 
 };
 
 
-document.getElementById("surpriseBtn").onclick=function(){
 
-    document.getElementById("letter").classList.remove("hidden");
+// Surprise Button
 
-    this.innerHTML="I Love You ❤️";
+const surpriseBtn = document.getElementById("surpriseBtn");
 
-};
+const letter = document.getElementById("letter");
+
+
+if (surpriseBtn) {
+
+    surpriseBtn.onclick = function () {
+
+        letter.classList.remove("hidden");
+
+        this.innerHTML = "I Love You ❤️";
+
+    };
+
+}
+
+
+
+// Background Music
+
 const bgMusic = document.getElementById("bgMusic");
 
-window.addEventListener("load", () => {
-    bgMusic.play().catch(() => {});
-});
 
-document.addEventListener("click", () => {
-    bgMusic.play();
-}, { once: true });
+if (bgMusic) {
+
+    // Try autoplay
+
+    window.addEventListener("load", function () {
+
+        bgMusic.play().catch(() => {});
+
+    });
+
+
+
+    // Play after first touch/click
+
+    document.addEventListener("click", function () {
+
+        bgMusic.play();
+
+    }, { once: true });
+
+}
