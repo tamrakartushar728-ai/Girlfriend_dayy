@@ -18,3 +18,12 @@ document.getElementById("surpriseBtn").onclick=function(){
     this.innerHTML="I Love You ❤️";
 
 };
+const bgMusic = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+    bgMusic.play().catch(() => {});
+});
+
+document.addEventListener("click", () => {
+    bgMusic.play();
+}, { once: true });
