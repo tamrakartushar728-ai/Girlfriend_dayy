@@ -2,24 +2,29 @@ window.onload = function () {
 
     setTimeout(function () {
 
-        document.querySelector(".loader").style.display = "none";
+        const loader = document.querySelector(".loader");
+        const main = document.querySelector(".main");
 
-        document.querySelector(".main").classList.remove("hidden");
+        if (loader) {
+            loader.style.display = "none";
+        }
+
+        if (main) {
+            main.classList.remove("hidden");
+        }
 
     }, 3000);
 
 };
 
 
-
 // Surprise Button
 
 const surpriseBtn = document.getElementById("surpriseBtn");
-
 const letter = document.getElementById("letter");
 
 
-if (surpriseBtn) {
+if (surpriseBtn && letter) {
 
     surpriseBtn.onclick = function () {
 
@@ -32,7 +37,6 @@ if (surpriseBtn) {
 }
 
 
-
 // Background Music
 
 const bgMusic = document.getElementById("bgMusic");
@@ -40,17 +44,16 @@ const bgMusic = document.getElementById("bgMusic");
 
 if (bgMusic) {
 
-    // Try autoplay
+    // Website load hone par try karega
 
     window.addEventListener("load", function () {
 
-        bgMusic.play().catch(() => {});
+        bgMusic.play().catch(function () {});
 
     });
 
 
-
-    // Play after first touch/click
+    // Pehli baar screen touch/click par music chalega
 
     document.addEventListener("click", function () {
 
